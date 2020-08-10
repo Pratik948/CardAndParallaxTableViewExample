@@ -23,10 +23,16 @@ extension UIView {
         
         let path = UIBezierPath()
         let x: CGFloat = 0
-        let y: CGFloat = 0
+        var y: CGFloat = 0
         let viewWidth = self.frame.width
-        let viewHeight = self.frame.height
+        var viewHeight = self.frame.height
         
+        if (!top) {
+            y-=2
+        }
+        if (!bottom) {
+            viewHeight+=2
+        }
         // selecting top most point
         path.move(to: CGPoint(x: x, y: y))
         // Move to the Bottom Left Corner, this will cover left edges
